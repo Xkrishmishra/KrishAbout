@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KRISH | REVOLUTIONIZED</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap');
+        
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* The "Massive" Text Style */
+        .hero-title {
+            font-size: 12vw; /* Scaled to screen width */
+            line-height: 0.8;
+            letter-spacing: -0.05em;
+            text-transform: uppercase;
+        }
+
+        .outline-text {
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+            color: transparent;
+        }
+
+        .neon-glow {
+            text-shadow: 0 0 30px rgba(0, 242, 255, 0.6);
+        }
+
+        /* Glassmorphism Sections */
+        .section-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: #000; }
+        ::-webkit-scrollbar-thumb { background: #00f2ff; border-radius: 10px; }
+    </style>
+</head>
+<body>
+
+    <main id="main-content">
+
+        <section class="h-screen flex flex-col justify-center items-center px-10 relative overflow-hidden">
+            <div class="absolute inset-0 opacity-20 pointer-events-none">
+                <div id="grid-bg" class="w-full h-full" style="background-image: radial-gradient(#00f2ff 1px, transparent 1px); background-size: 50px 50px;"></div>
+            </div>
+
+            <div class="z-10 text-center">
+                <p class="text-cyan-400 tracking-[0.5em] mb-4 uppercase text-sm">Based in Uttar Pradesh, India</p>
+                <h1 class="hero-title font-black mb-0">
+                    CODER <span class="outline-text">KRISH</span>
+                </h1>
+                <h1 class="hero-title font-black neon-glow">
+                    REVOLUTIONIZED.
+                </h1>
+            </div>
+
+            <div class="mt-20 animate-bounce text-gray-500">
+                <p class="text-xs uppercase tracking-widest">Scroll to explore</p>
+            </div>
+        </section>
+
+        <section class="min-h-screen py-40 px-10 flex items-center">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-5xl md:text-8xl font-bold leading-tight mb-20 reveal-text">
+                    4 YEARS OF <span class="text-cyan-500">EXPERIENCE</span>. <br>
+                    BUILDING THE <span class="outline-text">FUTURE</span> OF WEB.
+                </h2>
+                
+                <div class="grid md:grid-cols-2 gap-20">
+                    <div class="section-card p-12 rounded-3xl">
+                        <p class="text-2xl text-gray-400 leading-relaxed">
+                            I am a passionate full-stack developer from Uttar Pradesh. I specialize in building modern, scalable, and high-performance applications. From automation to creative coding, I handle it all.
+                        </p>
+                    </div>
+                    
+                    <div class="space-y-10">
+                        <div class="group">
+                            <p class="text-gray-500 uppercase tracking-tighter mb-2">Primary Stack</p>
+                            <h3 class="text-4xl group-hover:text-cyan-400 transition-colors">FULL STACK DEV</h3>
+                        </div>
+                        <div class="group">
+                            <p class="text-gray-500 uppercase tracking-tighter mb-2">Specialty</p>
+                            <h3 class="text-4xl group-hover:text-cyan-400 transition-colors">AUTOMATION & BOTS</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-40 bg-white text-black">
+            <div class="px-10">
+                <h2 class="text-[10vw] font-black leading-none mb-20">MY SKILLS.</h2>
+                <div class="flex flex-wrap gap-4 text-3xl md:text-6xl font-bold uppercase">
+                    <span class="px-6 py-2 border-4 border-black">Python</span>
+                    <span class="px-6 py-2 bg-black text-white">JavaScript</span>
+                    <span class="px-6 py-2 border-4 border-black">Node.js</span>
+                    <span class="px-6 py-2 border-4 border-black">API Design</span>
+                    <span class="px-6 py-2 border-4 border-black outline-text" style="-webkit-text-stroke: 2px black;">React</span>
+                    <span class="px-6 py-2 bg-cyan-500">Automation</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="h-screen flex flex-col justify-center items-center bg-cyan-500 text-black">
+            <h2 class="hero-title font-black text-center mb-10">LET'S TALK.</h2>
+            <div class="flex flex-col md:flex-row gap-10">
+                <a href="mailto:xkrishmishra@gmail.com" class="text-4xl font-bold underline hover:italic transition-all">EMAIL ME</a>
+                <a href="https://t.me/Krishnetwork" class="text-4xl font-bold underline hover:italic transition-all">TELEGRAM</a>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Hero Parallax
+        gsap.to("#grid-bg", {
+            scrollTrigger: {
+                scrub: true
+            },
+            y: 200,
+            scale: 1.5
+        });
+
+        // Massive Text Reveal
+        gsap.from(".reveal-text", {
+            scrollTrigger: {
+                trigger: ".reveal-text",
+                start: "top 80%",
+                end: "bottom 20%",
+                scrub: true
+            },
+            opacity: 0,
+            x: -100,
+            duration: 1
+        });
+
+        // Smooth color transition for sections
+        gsap.to("body", {
+            scrollTrigger: {
+                trigger: ".bg-white",
+                start: "top center",
+                end: "bottom center",
+                scrub: true
+            },
+            backgroundColor: "#fff",
+            color: "#000"
+        });
+    </script>
+</body>
+</html>
